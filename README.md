@@ -6,13 +6,9 @@ WeekdayDatePicker is a picker view with day, month and year components and extra
 
 ### Installation
 
-Recomended approach is to use [CocoaPods](https://cocoapods.org/) dependency manager. Just add 
-```
-pod 'WeekdayDatePicker', '~> 1.0.0'
-```
-to your Podfile.
+Just drop entire WeekdayDatePicker directory straight to your project. This is demonstrated by the example project.
 
-Or you can drop entire WeekdayDatePicker directory straight to your project. This is demonstrated by the example project.
+Coming soon: integration via [CocoaPods](https://cocoapods.org/)
 
 ### How to use it
 
