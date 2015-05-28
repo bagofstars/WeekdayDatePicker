@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  WeekdayDatePicker
+
+  Created by Marcin Hawro on 04/04/2015.
+  Copyright (c) 2015 Marcin Hawro. All rights reserved.
+*/
+
+"Sunday" = "Sunday";
+"Monday" = "Monday";
+"Tuesday" = "Tuesday";
+"Wednesday" = "Wednesday";
+"Thursday" = "Thursday";
+"Friday" = "Friday";
+"Saturday" = "Saturday";
