@@ -46,7 +46,7 @@ Only Gregorian calendar supported. Also components don't "loop". And WeekdayDate
 
 ### Class architecture (diagram)
 
-![Class diagram image](/ReadmeResources/ClassDiagram.png)
+![Class diagram image](/ReadmeResources/classDiagram.png)
 
 ### Licence
 
