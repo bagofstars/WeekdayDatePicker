@@ -12,10 +12,11 @@ Coming soon: integration via [CocoaPods](https://cocoapods.org/)
 
 ### How to use it
 
-Drag UIDataPicker to your view and set class to `BoSWeekdayDatePickerView`. 
+In the Interface Builder drag UIDataPicker object to your view and set its class to `BoSWeekdayDatePickerView`. 
 
+![Usage demonstration](/ReadmeResources/weekdateDatePickerUsage.png)
 
-Alternatively you can create it directly in the source code
+Alternatively you can create it directly in the source code:
 ```
 BoSWeekdayDatePickerView *weekdayDatePickerView = [[BoSWeekdayDatePickerView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 216.0f)];
 ```
