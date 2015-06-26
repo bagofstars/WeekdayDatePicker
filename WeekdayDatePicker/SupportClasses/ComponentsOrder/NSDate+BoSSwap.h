@@ -12,6 +12,6 @@
  */
 @interface NSDate (BoSSwap)
 
-+ (void)bos_swapIfNecessaryMinDate:(NSDate **)minDate withMaxDate:(NSDate **)maxDate;
++ (void)bos_swapIfNecessaryMinDate:(NSDate * __autoreleasing *)minDate withMaxDate:(NSDate * __autoreleasing *)maxDate;
 
 @end

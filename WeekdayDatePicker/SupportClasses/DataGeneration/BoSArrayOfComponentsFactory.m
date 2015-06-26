@@ -13,7 +13,6 @@
 #import "BoSDateUnitsUtility.h"
 
 static const NSInteger BoSNumberOfFirstUnit = 1;
-static const NSInteger BoSMonthNumberForFebruary = 2;
 
 @interface BoSArrayOfComponentsFactory ()
 
@@ -85,8 +84,9 @@ static const NSInteger BoSMonthNumberForFebruary = 2;
   NSInteger monthNumber = component.month;
   NSAssert(monthNumber > 0 && monthNumber < 13, @"Month component value out of range!");
 
+  const NSInteger monthNumberForFebruary = 2;
   NSInteger yearNumber = component.year;
-  NSAssert(!(monthNumber == BoSMonthNumberForFebruary && yearNumber == 0), @"Year component value is missing!");
+  NSAssert(!(monthNumber == monthNumberForFebruary && yearNumber == 0), @"Year component value is missing!");
 
   NSInteger endNumber = [self.dateUnitsUtility numberOfDaysForMonthNumber:monthNumber yearNumber:yearNumber];
   return [self arrayOfValuesFrom:BoSNumberOfFirstUnit to:endNumber];
