@@ -84,9 +84,8 @@ static const NSInteger BoSNumberOfFirstUnit = 1;
   NSInteger monthNumber = component.month;
   NSAssert(monthNumber > 0 && monthNumber < 13, @"Month component value out of range!");
 
-  const NSInteger monthNumberForFebruary = 2;
   NSInteger yearNumber = component.year;
-  NSAssert(!(monthNumber == monthNumberForFebruary && yearNumber == 0), @"Year component value is missing!");
+  NSAssert(!(monthNumber == 2 && yearNumber == 0), @"Year component value required for February!");
 
   NSInteger endNumber = [self.dateUnitsUtility numberOfDaysForMonthNumber:monthNumber yearNumber:yearNumber];
   return [self arrayOfValuesFrom:BoSNumberOfFirstUnit to:endNumber];
