@@ -113,6 +113,7 @@
 		1EC8584C1A7C2D1700BDA3B4 /* WeekdayDatePickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeekdayDatePickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EC8585D1A7C2E6000BDA3B4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1EC8585F1A7C2E6B00BDA3B4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1EC93E351B83C5410092B8AF /* BoSWeekdayDatePicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoSWeekdayDatePicker.h; sourceTree = "<group>"; };
 		355EE54554731F2A9543CC6D /* libPods-WeekdayDatePickerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeekdayDatePickerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3652F473A7CDA0978E6E2400 /* libPods-DaysOfWeekDatePickerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DaysOfWeekDatePickerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -181,6 +182,7 @@
 		1E581F6B1AFF796500DFCFE2 /* WeekdayDatePicker */ = {
 			isa = PBXGroup;
 			children = (
+				1EC93E351B83C5410092B8AF /* BoSWeekdayDatePicker.h */,
 				1E581F6C1AFF796500DFCFE2 /* BoSWeekdayDatePickerView.h */,
 				1E581F6D1AFF796500DFCFE2 /* BoSWeekdayDatePickerView.m */,
 				1E581F6E1AFF796500DFCFE2 /* SupportClasses */,
