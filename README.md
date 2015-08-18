@@ -12,9 +12,9 @@ Coming soon: integration via [CocoaPods](https://cocoapods.org/)
 
 ### How to use it
 
-In the Interface Builder drag UIDataPicker object to your view and set its class to `BoSWeekdayDatePickerView`. 
+In the Interface Builder drag UIPickerView object to your view and set its class to `BoSWeekdayDatePickerView`. 
 
-![Usage demonstration](/ReadmeResources/weekdateDatePickerUsage.png)
+![Usage demonstration](/ReadmeResources/weekdayDatePickerUsage@2x.png)
 
 Alternatively you can create it directly in the source code:
 ```
@@ -24,6 +24,10 @@ BoSWeekdayDatePickerView *weekdayDatePickerView = [[BoSWeekdayDatePickerView all
 In both cases don't forget to set minimum, maximum and initial selection dates. For example:
 
 ```
+#import "BoSWeekdayDatePicker.h"
+
+(...)
+
 NSDate *minDate = [NSDate bos_dateInCalendar:[BoSWeekdayDatePickerCalendar sharedInstance].calendar fromDay:1 month:1 year:2000];
 NSDate *maxDate = [NSDate bos_dateInCalendar:[BoSWeekdayDatePickerCalendar sharedInstance].calendar fromDay:31 month:12 year:2020];
 NSDate *initialSelectionDate = [NSDate bos_dateInCalendar:[BoSWeekdayDatePickerCalendar sharedInstance].calendar fromDay:8 month:8 year:2015];
