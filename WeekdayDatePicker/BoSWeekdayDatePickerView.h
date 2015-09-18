@@ -6,6 +6,7 @@
 #import <UIKit/UIPickerView.h>
 
 @class BoSWeekdayDatePickerView;
+@class BoSWeekdayDatePickerSelectedItems;
 
 @protocol BoSWeekdayDatePickerLocaleChangeDelegate <NSObject>
 
@@ -15,6 +16,8 @@
 @end
 
 @interface BoSWeekdayDatePickerView : UIPickerView
+
+@property (nonatomic, copy) void (^didSelectRowCallback)(BoSWeekdayDatePickerSelectedItems *selectedItems);
 
 - (void)setupMinDate:(NSDate *)minDate maxDate:(NSDate *)maxDate initialSelectionDate:(NSDate *)initialSelectionDate;
 

@@ -15,6 +15,7 @@
 #import "NSDate+BoSConversion.h"
 #import "BoSDateUnitsUtility.h"
 #import "BoSDeviceLocaleHandler.h"
+#import "BoSWeekdayDatePickerSelectedItems.h"
 
 FOUNDATION_EXTERN const NSInteger BoSWeekdaysComponentNumber;
 
@@ -152,6 +153,8 @@ FOUNDATION_EXTERN const NSInteger BoSWeekdaysComponentNumber;
     [self adjustNumberOfMonthsInPickerView:pickerView];
     [self adjustNumberOfDaysInPickerView:pickerView];
     [self adjustWeekdaySelectionInPickerView:pickerView];
+
+    [self invokeDidSelectCallbackIfNeededWithPickerView:pickerView row:row component:component];
     return;
   }
 
@@ -160,6 +163,39 @@ FOUNDATION_EXTERN const NSInteger BoSWeekdaysComponentNumber;
   }
 
   [self adjustWeekdaySelectionInPickerView:pickerView];
+
+  [self invokeDidSelectCallbackIfNeededWithPickerView:pickerView row:row component:component];
+}
+
+- (void)invokeDidSelectCallbackIfNeededWithPickerView:(UIPickerView *)pickerView row:(NSInteger)row component:(NSInteger)component
+{
+  if (component == BoSWeekdaysComponentNumber) {
+    return;
+  }
+
+  BOOL pickerViewHasCallback = [pickerView isKindOfClass:[BoSWeekdayDatePickerView class]] &&
+    ((BoSWeekdayDatePickerView *)pickerView).didSelectRowCallback;
+  if (!pickerViewHasCallback) {
+    return;
+  }
+
+  BoSWeekdayDatePickerSelectedItems *selectedItems = [[BoSWeekdayDatePickerSelectedItems alloc]
+    initWithArrayOfRowValues:[self arrayOfValuesSelectedInPickerView:pickerView]
+                selectedDate:[self selectedDateInPickerView:pickerView]
+          indexOfSelectedRow:row
+    indexOfSelectedComponent:component];
+
+  ((BoSWeekdayDatePickerView *)pickerView).didSelectRowCallback(selectedItems);
+}
+
+- (NSArray *)arrayOfValuesSelectedInPickerView:(UIPickerView *)pickerView
+{
+  return @[
+    [self selectedObjectInPickerView:pickerView inComponent:0],
+    [self selectedObjectInPickerView:pickerView inComponent:1],
+    [self selectedObjectInPickerView:pickerView inComponent:2],
+    [self selectedObjectInPickerView:pickerView inComponent:3]
+  ];
 }
 
 
@@ -170,11 +206,11 @@ FOUNDATION_EXTERN const NSInteger BoSWeekdaysComponentNumber;
   NSDate *selectedDate = [self selectedDateInPickerView:pickerView];
 
   NSInteger newWeekdayValue = [[BoSWeekdayDatePickerCalendar sharedInstance].calendar components:NSCalendarUnitWeekday fromDate:selectedDate].weekday;
-  NSInteger weekdayRow = [self rowForDateComponentValue:newWeekdayValue pickerComponent:BoSWeekdaysRowNumber];
+  NSInteger weekdayRow = [self rowForDateComponentValue:newWeekdayValue pickerComponent:BoSWeekdaysComponentNumber];
 
   NSAssert(weekdayRow >= 0 && weekdayRow < (NSInteger)self.weekDayNamesArray.count , @"Weekday row is out of range!");
 
-  [pickerView selectRow:weekdayRow inComponent:BoSWeekdaysRowNumber animated:YES];
+  [pickerView selectRow:weekdayRow inComponent:BoSWeekdaysComponentNumber animated:YES];
 }
 
 - (void)adjustNumberOfDaysInPickerView:(UIPickerView *)pickerView
@@ -270,7 +306,7 @@ FOUNDATION_EXTERN const NSInteger BoSWeekdaysComponentNumber;
 
 - (NSArray *)dataArrayForComponent:(NSInteger)pickerComponent
 {
-  if (pickerComponent == BoSWeekdaysRowNumber) {
+  if (pickerComponent == BoSWeekdaysComponentNumber) {
     return self.weekDayNamesArray;
   }
 
