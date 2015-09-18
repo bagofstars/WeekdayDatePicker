@@ -13,7 +13,7 @@
 #import "BoSWeekdayDatePickerAppearance.h"
 #import "BoSWeekdayDatePickerComponentsOrderManager.h"
 
-FOUNDATION_EXTERN const NSInteger BoSWeekdaysRowNumber;
+FOUNDATION_EXTERN const NSInteger BoSWeekdaysComponentNumber;
 
 static NSString * const BoSDefaultFontFamily = @"Helvetica-Light";
 static const CGFloat BoSDefaultFontSize = 13.0f;
@@ -69,7 +69,7 @@ static const NSInteger BoSPercentageOfWidthForYear = 24;
 
 - (CGFloat)rowWidthForComponent:(NSInteger)component
 {
-  if (component == BoSWeekdaysRowNumber) {
+  if (component == BoSWeekdaysComponentNumber) {
     return self.weekdayViewWidth;
   }
 
@@ -124,7 +124,7 @@ static const NSInteger BoSPercentageOfWidthForYear = 24;
 
 - (CGFloat)leftIndentationForComponent:(NSInteger)component
 {
-  if (component == BoSWeekdaysRowNumber) {
+  if (component == BoSWeekdaysComponentNumber) {
     return BoSWeekdayLeftIndentation;
   }
 

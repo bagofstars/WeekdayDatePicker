@@ -16,7 +16,7 @@
 #import "BoSDateUnitsUtility.h"
 #import "BoSDeviceLocaleHandler.h"
 
-FOUNDATION_EXTERN const NSInteger BoSWeekdaysRowNumber;
+FOUNDATION_EXTERN const NSInteger BoSWeekdaysComponentNumber;
 
 
 @interface BoSWeekdayDatePickerDelegateDataSource ()
@@ -69,7 +69,7 @@ FOUNDATION_EXTERN const NSInteger BoSWeekdaysRowNumber;
 
 - (NSInteger)weekdayRowForDateComponentValue:(NSInteger)value
 {
-  return [self rowForDateComponentValue:value pickerComponent:BoSWeekdaysRowNumber];
+  return [self rowForDateComponentValue:value pickerComponent:BoSWeekdaysComponentNumber];
 }
 
 - (NSInteger)dayRowForDateComponentValue:(NSInteger)value
@@ -111,7 +111,7 @@ FOUNDATION_EXTERN const NSInteger BoSWeekdaysRowNumber;
 
 - (NSInteger)rowForDateComponentValue:(NSInteger)value pickerComponent:(NSInteger)pickerComponent
 {
-  if (pickerComponent == BoSWeekdaysRowNumber) {
+  if (pickerComponent == BoSWeekdaysComponentNumber) {
     return (value - 1);
   }
 

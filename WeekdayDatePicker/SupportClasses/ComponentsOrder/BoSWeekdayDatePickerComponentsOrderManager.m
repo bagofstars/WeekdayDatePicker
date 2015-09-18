@@ -17,7 +17,7 @@ NSString * const BoSFormatCharacterForDays = @"d";
 NSString * const BoSFormatCharacterForMonths = @"M";
 NSString * const BoSFormatCharacterForYears = @"y";
 
-const NSInteger BoSWeekdaysRowNumber = 0;
+const NSInteger BoSWeekdaysComponentNumber = 0;
 
 @interface BoSWeekdayDatePickerComponentsOrderManager ()
 

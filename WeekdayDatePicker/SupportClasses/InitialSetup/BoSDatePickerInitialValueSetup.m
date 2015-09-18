@@ -14,7 +14,7 @@
 #import "BoSWeekdayDatePickerCalendar.h"
 #import "BoSWeekdayDatePickerComponentsOrderManager.h"
 
-FOUNDATION_EXTERN const NSInteger BoSWeekdaysRowNumber;
+FOUNDATION_EXTERN const NSInteger BoSWeekdaysComponentNumber;
 
 @implementation BoSDatePickerInitialValueSetup
 
@@ -40,7 +40,7 @@ FOUNDATION_EXTERN const NSInteger BoSWeekdaysRowNumber;
 
   NSAssert(pickerView.dataSource, @"Requires data source to set the initial row!");
 
-  [pickerView selectRow:weekdayRow inComponent:BoSWeekdaysRowNumber animated:NO];
+  [pickerView selectRow:weekdayRow inComponent:BoSWeekdaysComponentNumber animated:NO];
   [pickerView selectRow:dayRow inComponent:dataSource.componentsOrderManager.daysRowNumber animated:NO];
   [pickerView selectRow:monthRow inComponent:dataSource.componentsOrderManager.monthRowNumber animated:NO];
   [pickerView selectRow:yearRow inComponent:dataSource.componentsOrderManager.yearRowNumber animated:NO];
