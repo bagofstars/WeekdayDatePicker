@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -43,20 +43,34 @@
                                 <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QgL-DG-eFt" userLabel="Selected date label">
+                                <rect key="frame" x="16" y="263" width="288" height="15"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="5bW-sR-wWm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                <color key="textColor" red="0.25098039215686274" green="0.25098039215686274" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="FLG-Ft-HVm" firstAttribute="top" secondItem="OBj-jG-U6U" secondAttribute="bottom" constant="10" id="GbL-J6-esd"/>
+                            <constraint firstItem="QgL-DG-eFt" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="JDP-vP-glr"/>
                             <constraint firstItem="FLG-Ft-HVm" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="5" id="LTc-dx-US1"/>
+                            <constraint firstItem="QgL-DG-eFt" firstAttribute="top" secondItem="FLG-Ft-HVm" secondAttribute="bottom" constant="10" id="Lud-P3-OPW"/>
                             <constraint firstItem="OBj-jG-U6U" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Tou-wB-Qwm"/>
                             <constraint firstItem="OBj-jG-U6U" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="60" id="Vbc-01-4Kj"/>
                             <constraint firstAttribute="trailing" secondItem="OBj-jG-U6U" secondAttribute="trailing" id="c0b-ru-QtR"/>
                             <constraint firstItem="dKd-zT-JHG" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="itq-Sj-E7Q"/>
+                            <constraint firstAttribute="trailing" secondItem="QgL-DG-eFt" secondAttribute="trailing" constant="16" id="sz7-vG-lf8"/>
                             <constraint firstItem="OBj-jG-U6U" firstAttribute="top" secondItem="dKd-zT-JHG" secondAttribute="bottom" constant="5" id="uPY-XZ-TWi"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="pickerView" destination="OBj-jG-U6U" id="S41-uQ-u31"/>
+                        <outlet property="selectedDateLabel" destination="QgL-DG-eFt" id="p2p-wI-xkS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

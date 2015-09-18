@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIScreen.h>
+#import <UIKit/UILabel.h>
 #import "ViewController.h"
 #import "BosWeekdayDatePickerView.h"
 #import "BoSWeekdayDatePickerCalendar.h"
@@ -15,6 +16,8 @@
 @interface ViewController ()
 
 @property (nonatomic, weak) IBOutlet BoSWeekdayDatePickerView *pickerView;
+@property (nonatomic, weak) IBOutlet UILabel *selectedDateLabel;
+
 
 @end
 
