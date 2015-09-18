@@ -39,6 +39,7 @@
 		1E581FC51AFF7BCF00DFCFE2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E581FA81AFF79C500DFCFE2 /* LaunchScreen.xib */; };
 		1E8380241AFF832A00921F61 /* Pods-WeekdayDatePickerTests.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 1E8380221AFF832A00921F61 /* Pods-WeekdayDatePickerTests.debug.xcconfig */; };
 		1E8380251AFF832A00921F61 /* Pods-WeekdayDatePickerTests.release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 1E8380231AFF832A00921F61 /* Pods-WeekdayDatePickerTests.release.xcconfig */; };
+		1E8DDE251BA4A7CD0028513B /* BoSWeekdayDatePickerSelectedItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8DDE241BA4A7CD0028513B /* BoSWeekdayDatePickerSelectedItems.m */; };
 		1EC8585E1A7C2E6000BDA3B4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EC8585D1A7C2E6000BDA3B4 /* UIKit.framework */; };
 		1EC858601A7C2E6B00BDA3B4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EC8585F1A7C2E6B00BDA3B4 /* Foundation.framework */; };
 		4551002D0229B51A5F00CDDE /* libPods-WeekdayDatePickerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 355EE54554731F2A9543CC6D /* libPods-WeekdayDatePickerTests.a */; };
@@ -107,8 +108,10 @@
 		1E581FB61AFF79C500DFCFE2 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = Main.strings; sourceTree = "<group>"; };
 		1E581FB71AFF79C500DFCFE2 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ExampleClasses/ViewController.h; sourceTree = "<group>"; };
 		1E581FB81AFF79C500DFCFE2 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ExampleClasses/ViewController.m; sourceTree = "<group>"; };
+		1E59C2B01BA37E0A00F69FC6 /* BoSWeekdayDatePickerSelectedItems.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoSWeekdayDatePickerSelectedItems.h; sourceTree = "<group>"; };
 		1E8380221AFF832A00921F61 /* Pods-WeekdayDatePickerTests.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-WeekdayDatePickerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeekdayDatePickerTests/Pods-WeekdayDatePickerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1E8380231AFF832A00921F61 /* Pods-WeekdayDatePickerTests.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-WeekdayDatePickerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeekdayDatePickerTests/Pods-WeekdayDatePickerTests.release.xcconfig"; sourceTree = "<group>"; };
+		1E8DDE241BA4A7CD0028513B /* BoSWeekdayDatePickerSelectedItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoSWeekdayDatePickerSelectedItems.m; sourceTree = "<group>"; };
 		1EC858331A7C2D1700BDA3B4 /* WeekdayDatePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeekdayDatePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EC8584C1A7C2D1700BDA3B4 /* WeekdayDatePickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeekdayDatePickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EC8585D1A7C2E6000BDA3B4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -185,6 +188,8 @@
 				1EC93E351B83C5410092B8AF /* BoSWeekdayDatePicker.h */,
 				1E581F6C1AFF796500DFCFE2 /* BoSWeekdayDatePickerView.h */,
 				1E581F6D1AFF796500DFCFE2 /* BoSWeekdayDatePickerView.m */,
+				1E59C2B01BA37E0A00F69FC6 /* BoSWeekdayDatePickerSelectedItems.h */,
+				1E8DDE241BA4A7CD0028513B /* BoSWeekdayDatePickerSelectedItems.m */,
 				1E581F6E1AFF796500DFCFE2 /* SupportClasses */,
 			);
 			name = WeekdayDatePicker;
@@ -516,6 +521,7 @@
 				1E581FA01AFF796500DFCFE2 /* NSDateComponents+BoSComponentValue.m in Sources */,
 				1E581F991AFF796500DFCFE2 /* BoSDeviceLocaleHandler.m in Sources */,
 				1E581F971AFF796500DFCFE2 /* BoSWeekdayDatePickerCalendar.m in Sources */,
+				1E8DDE251BA4A7CD0028513B /* BoSWeekdayDatePickerSelectedItems.m in Sources */,
 				1E581FB91AFF79C500DFCFE2 /* AppDelegate.m in Sources */,
 				1E581F981AFF796500DFCFE2 /* BoSDataFormatStringFilter.m in Sources */,
 				1E581FBF1AFF79C500DFCFE2 /* main.m in Sources */,
