@@ -6,22 +6,26 @@ WeekdayDatePicker is a picker view with day, month and year components and extra
 
 ### Installation
 
-Just drop entire WeekdayDatePicker directory straight to your project. This is demonstrated by the example project.
+Recommended way of installing is via [CocoaPods](https://cocoapods.org/). Add the following lines to your Podfile:
+```
+pod 'WeekdayDatePicker', '~> 1.1.0'
+```
 
-Coming soon: integration via [CocoaPods](https://cocoapods.org/)
+Alternatively just drop entire WeekdayDatePicker directory straight to your project. This is demonstrated by the example project.
 
 ### How to use it
 
+#### Setup
 In the Interface Builder drag UIPickerView object to your view and set its class to `BoSWeekdayDatePickerView`. 
 
 ![Usage demonstration](/ReadmeResources/weekdayDatePickerUsage@2x.png)
 
-Alternatively you can create it directly in the source code:
+Alternatively you can create it directly in the source code. For example:
 ```
 BoSWeekdayDatePickerView *weekdayDatePickerView = [[BoSWeekdayDatePickerView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 216.0f)];
 ```
 
-In both cases don't forget to set minimum, maximum and initial selection dates. For example:
+In both cases don't forget to set minimum, maximum and initial selection dates e.g.:
 
 ```
 #import "BoSWeekdayDatePicker.h"
@@ -33,6 +37,35 @@ NSDate *maxDate = [NSDate bos_dateInCalendar:[BoSWeekdayDatePickerCalendar share
 NSDate *initialSelectionDate = [NSDate bos_dateInCalendar:[BoSWeekdayDatePickerCalendar sharedInstance].calendar fromDay:8 month:8 year:2015];
 
 [weekdayDatePickerView setupMinDate:minDate maxDate:maxDate initialSelectionDate:initialSelectionDate];
+```
+
+#### Selection callback
+Once you have date picker in place you can start capturing data sent on new row selection (basically from `pickerView:didSelectRow:inComponent:` method). This can be done by implementing public block property from the `BoSWeekdayDatePickerView`:
+```
+@property (nonatomic, copy) void (^didSelectRowCallback)(BoSWeekdayDatePickerSelectedItems *selectedItems);
+```
+
+For example after selection which you can see on the gif above the callback implementation below
+```
+  weekdayDatePicker.didSelectRowCallback = ^(BoSWeekdayDatePickerSelectedItems *selectedItems) {
+    NSLog(@"Selected row values: %@", selectedItems.arrayOfRowValues);
+    NSLog(@"Selected date: %@", selectedItems.selectedDate);
+    NSLog(@"Index of selected row: %d", selectedItems.indexOfSelectedRow);
+    NSLog(@"Index of selected component: %d", selectedItems.indexOfSelectedComponent);
+  };
+```
+
+will produce the following result:
+```
+Selected row values: (
+    Thursday,
+    12,
+    31,
+    2015
+)
+Selected date: 2015-12-31 00:00:00 +0000
+Index of selected row: 30
+Index of selected component: 2
 ```
 
 ### Internationalization and localization
