@@ -65,7 +65,7 @@
   NSParameterAssert(minDate && maxDate);
 
   [NSDate bos_swapIfNecessaryMinDate:&minDate withMaxDate:&maxDate];
-  self.pickerDelegateDataSource = [[BoSWeekdayDatePickerDelegateDataSource alloc] initWithMinDate:minDate maxDate:maxDate];
+  self.pickerDelegateDataSource = [[BoSWeekdayDatePickerDelegateDataSource alloc] initWithMinDate:minDate maxDate:maxDate initialDate:initialSelectionDate];
   [self connectDelegates];
 
   [BoSDatePickerInitialValueSetup setupRowsSelectionFromInitialDate:initialSelectionDate forDatePicker:self withDataSource:self.pickerDelegateDataSource];

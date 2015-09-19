@@ -14,7 +14,7 @@
 
 @property (nonatomic, strong, readonly) BoSWeekdayDatePickerComponentsOrderManager *componentsOrderManager;
 
-- (instancetype)initWithMinDate:(NSDate *)minDate maxDate:(NSDate *)maxDate;
+- (instancetype)initWithMinDate:(NSDate *)minDate maxDate:(NSDate *)maxDate initialDate:(NSDate *)initialDate;
 
 - (NSInteger)weekdayRowForDateComponentValue:(NSInteger)value;
 - (NSInteger)dayRowForDateComponentValue:(NSInteger)value;

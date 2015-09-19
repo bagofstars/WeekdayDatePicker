@@ -46,9 +46,9 @@ FOUNDATION_EXTERN const NSInteger BoSWeekdaysComponentNumber;
   return nil;
 }
 
-- (instancetype)initWithMinDate:(NSDate *)minDate maxDate:(NSDate *)maxDate
+- (instancetype)initWithMinDate:(NSDate *)minDate maxDate:(NSDate *)maxDate initialDate:(NSDate *)initialDate
 {
-  NSParameterAssert(minDate && maxDate);
+  NSParameterAssert(minDate && maxDate && initialDate);
   self = [super init];
   if (!self) {
     return nil;
@@ -63,7 +63,7 @@ FOUNDATION_EXTERN const NSInteger BoSWeekdaysComponentNumber;
                                                                        minDate:minDate
                                                                        maxDate:maxDate];
   _appearance = [[BoSWeekdayDatePickerAppearance alloc] initWithComponentsOrderManager:_componentsOrderManager];
-  [self setupDataArrays];
+  [self setupDataArraysWithCurrentlySelectedDate:initialDate];
 
   return self;
 }
@@ -91,8 +91,10 @@ FOUNDATION_EXTERN const NSInteger BoSWeekdaysComponentNumber;
 
 #pragma mark - Data setup
 
-- (void)setupDataArrays
+- (void)setupDataArraysWithCurrentlySelectedDate:(NSDate *)selectedDate
 {
+  NSParameterAssert(selectedDate);
+
   self.weekDayNamesArray = @[
     NSLocalizedString(@"Sunday", nil),
     NSLocalizedString(@"Monday", nil),
@@ -105,9 +107,8 @@ FOUNDATION_EXTERN const NSInteger BoSWeekdaysComponentNumber;
 
   self.yearsDataArray = [self.dataGenerator yearsArray];
 
-  NSDate *today = [NSDate date];
-  self.monthsDataArray = [self.dataGenerator monthsArrayForDate:today];
-  self.daysDataArray = [self.dataGenerator daysArrayForDate:today];
+  self.monthsDataArray = [self.dataGenerator monthsArrayForDate:selectedDate];
+  self.daysDataArray = [self.dataGenerator daysArrayForDate:selectedDate];
 }
 
 - (NSInteger)rowForDateComponentValue:(NSInteger)value pickerComponent:(NSInteger)pickerComponent
