@@ -86,6 +86,21 @@ Only Gregorian calendar supported. Also components don't "loop". And WeekdayDate
 
 ![Class diagram image](/ReadmeResources/classDiagram.png)
 
+### Release note
+
+##### ver. 1.1.0
+- added did-select-row completion block
+- extended example project to demonstrate new completion block in action 
+
+##### ver. 1.0.2
+- added main header file which combines required imports
+
+##### ver. 1.0.1
+- added CocoaPods integration 
+
+##### ver. 1.0.0
+- first release!
+
 ### Licence
 
 MIT
